@@ -17,7 +17,7 @@
     
 }
 .game-cover {
-    background: url("assests/emoji background - Copy.png") no-repeat;
+    background: url("assests/emoji background.png") no-repeat;
     background-size: cover;
 }
 
@@ -55,7 +55,7 @@ button {
     padding: 10px 10px;
     font-size: 1em;
     border: none;
-    background-color: #f4c531;
+    background-color: #f4c7317a;
     color: white;
     font-weight: 200px;
     border-radius: 40px;
