@@ -8,31 +8,19 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    width: 100%;
-    height: 100%;
-    /* background-color: #f4c531 ; */
-}
-
-.main-container {
-    width: 100%;
-    height: 100%;
-    background-color: red;
-    border: 1px solid black;
-    /* background: url("assests/—Pngtree—pile of social media emoji_1608042.png") no-repeat;
-    background-size: cover;
-    background-position: center; */
-}
-/* .Body {
+/* body {
+    background-color: #f4c531 ;
+} */
+.Body {
     background: url("assests/—Pngtree—pile of social media emoji_1608042.png") no-repeat;
     background-size: cover;
     
-} */
-/* .game-cover {
+}
+.game-cover {
     background: url("assests/emoji background - Copy.png") no-repeat;
     background-size: cover;
-} */
-/* 
+}
+
 .flex-centered {
     display: flex;
     align-items: center;
@@ -41,7 +29,8 @@ body {
 
 .play {
     width: 200px;
-    /* margin-top: 47%; 
+    margin-top: 41%;
+    
 }
 input {
     margin: 20px;
@@ -81,4 +70,4 @@ button {
     justify-content: center;
     flex-direction: column;
 }
- */
+

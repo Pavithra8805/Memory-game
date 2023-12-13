@@ -22,9 +22,9 @@ const images = [
 let timerDiv = document.getElementById("time");
 
 function countDown() {
-    localStorage.setItem("moves", moves);
+    localStorage.setItem("time", time);
 
-    if (time >= 0) {
+    if (time == 0) {
         timerDiv.innerText = time;
         time--;
     } else {

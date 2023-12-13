@@ -1,6 +1,6 @@
-// const playButton = document.getElementById("play-button");
+const playButton = document.getElementById("play-button");
 
-// playButton.onclick = () => {
+playButton.onclick = () => {
 
-//     window.location.href = "./game.html";
-// };
+    window.location.href = "./game.html";
+};
