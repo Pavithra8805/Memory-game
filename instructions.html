@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructions</title>
+    <style>
+        body {
+            background: url("assests/inst bg image.png") no-repeat;
+            background-size: cover;
+        }
+
+        .head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: wheat;
+            font-size: xx-large;
+            margin-top: 30px;
+        }
+
+        .game-play {
+            display: flex;
+            margin-left: 25%;
+            font-size: x-large;
+            color: #FDC639;
+
+        }
+
+        .class{
+            display: flex;
+            margin-left: 25%;
+            font-size: 25px;
+            color: ghostwhite;
+            margin-top: 0px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: #FDC639;
+            margin-left: 45%;
+            margin-top: 2%;
+            padding: 10px 20px;
+            font-size: large;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <h1>Instructions</h1>
+    </div>
+    <div class="game-play">
+        <h2>Game Play:</h2>
+    </div>
+    <div class="class">
+            <ol>
+                <li>Player take turn to flip over two cards, revealing their images.</li>
+                <li>If the two cards match,the player keeps the pair and gets another turn.</li>
+                <li>If the two cards do not match, the player flips them back face down.</li>
+                <li>The game continues until all pairs have been matched.</li>
+            </ol>
+    </div>
+    <button id="continue">Continue</button>
+    <script src="./instr.js"></script>
+</body>
+</html>
