@@ -71,3 +71,17 @@ button {
     flex-direction: column;
 }
 
+@media (max-width:600px) {
+    h1 {
+        font-size: 52px;
+        -webkit-text-stroke: 2px white;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    #message {
+        font-size: 35px;
+    }
+}
