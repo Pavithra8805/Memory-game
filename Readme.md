@@ -30,3 +30,5 @@ HTML, CSS, JAVA SCRIPT.
 ![Screenshot (350)](https://github.com/Pavithra8805/Memory-game/assets/141915927/ed22f177-35ba-444f-8e85-f921b5bdcfe8)
 
 ![Screenshot (351)](https://github.com/Pavithra8805/Memory-game/assets/141915927/4b94fd66-cc68-45c8-8d03-81ae0b360137)
+
+![Screenshot (352)](https://github.com/Pavithra8805/Memory-game/assets/141915927/20e00c45-6332-48a0-80d7-0386547a50a3)
