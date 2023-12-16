@@ -30,6 +30,7 @@ body {
 .play {
     width: 200px;
     margin-top: 41%;
+    cursor: pointer;
     
 }
 input {
@@ -61,6 +62,7 @@ button {
     border-radius: 40px;
     cursor: pointer;
     left: 200px;
+    cursor: pointer;
 }
 
 .controls-container {

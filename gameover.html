@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,12 +9,49 @@
             background: url("assests/Screenshot (337).png") no-repeat;
             background-size: cover;
         }
+
+        #wonOrLost {
+            display: flex;
+            justify-content: center;
+            padding-top: 13%;
+            font-size: 70px;
+            font-weight: 600;
+            color: #FAB201;
+            -webkit-text-stroke: 5px white;
+        }
+
+        #score {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            bottom: 35px;
+        }
+
+        #button {
+            padding: 10px;
+            margin-top: 30px;
+            background-color: #FAB201;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+            font-size: 40px;
+            opacity: 1;
+            border-radius: 5px;
+            width: 200px;
+            position: relative;
+            left: 525px;
+            bottom: 40px;
+        }
     </style>
 </head>
 
 <body>
-    
-    
-<script src="./Memory.html"></script>
+    <h1 id="wonOrLost"></h1>
+    <h1 id="score">moves: <span id="totalmoves"> </span></h1>
+    <div id="button">Play again</div>
+<script src="./gameover.js"></script>
 </body>
-</html> -->
+</html>

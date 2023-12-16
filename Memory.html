@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Fredoka One', cursive;
+            font-family: 'Fredoka One', 'cursive';
             background: url("assests/Screenshot (339).png") no-repeat;
             background-size: cover;
         }
@@ -85,6 +85,7 @@
             background-color: black;
             visibility: hidden;
             opacity: 0.9;
+            z-index: 99;
         }
 
         #message {
@@ -92,67 +93,14 @@
             color: white;
         }
 
-        #button {
-            padding: 10px;
-            margin-top: 30px;
-            background-color: #FAB201;
-            color: white;
-            cursor: pointer;
-            text-align: center;
-            line-height: 40px;
-            font-size: 30px;
-            opacity: 1;
-            border-radius: 5px;
-        }
+        
 
         a {
             color: white;
         }
 
-        /* .game-container {
-            position: relative;
-            width: 100%;
-            display: grid;
-            gap: 0.6em;
-        }
-
-        .moves {
-            text-align: right;
-            margin-bottom: 1.2em;
-        }
-
-        .moves span {
-            font-weight: 600;
-        }*/
-
-        .card-after {
-            position: absolute;
-            border-radius: 5px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.7s ease-out;
-            backface-visibility: hidden;
-        }
-
-        .card-after {
-            background-color: #ffffff;
-            transform: rotateY(180deg);
-        }
-
-        .container.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .container.flipped .card-after {
-            transform: rotateY(0deg);
-        }
-
-
         .hide {
-            display: none;
+            display: block;
         }
 
         .mark {
@@ -166,9 +114,11 @@
             top: 18px;
             left: 18px;
             z-index: 10;
+            cursor: pointer;
         }
 
         .face {
+            cursor: pointer;
             background-position: center;
             background-size: cover;
             width: 60%;
@@ -202,16 +152,15 @@
     <div class="game-display flex">
         <h1>Emoji's Memory game</h1>
         <div class="moves">
-            <h2>Moves: 
-            <div id="moves-count"></div>
-            <h2>Time: 
-            <div id="time"></div>
+            
+            <div id="moves-count" class="movesCount"><h2>Moves: <span>0</span></div>
+            
+            <div id="time" class="Time"><h2>Time: <span id="timer"></span></div>
         </div>
         <div class="game-container flex">
             <div class="container flex">
                 <div id="1" class="box">
-                    <div name="A" class="face flex">
-                        <!-- append here -->
+                    <div id="A" class="face flex">
                         😇
                     </div>
                     <div class="mark">
@@ -219,20 +168,22 @@
                 </div>
 
                 <div id="2" class="box">
-                    <div name="B" class="face flex">
+                    <div id="B" class="face flex">
                         🥳
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="3" class="box">
-                    <div name="C" class="face flex">😜
+                    <div id="C" class="face flex">
+                        😜
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="4" class="box">
-                    <div name="A" class="face flex">😇
+                    <div id="D" class="face flex">
+                        😇
                     </div>
                     <div class="mark">
                     </div>
@@ -240,25 +191,29 @@
             </div>
             <div class="container flex">
                 <div id="5" class="box">
-                    <div name="D" class="face flex">😎
+                    <div id="E" class="face flex">
+                        😎
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="6" class="box">
-                    <div name="E" class="face flex">😴
+                    <div id="F" class="face flex">
+                        😴
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="7" class="box">
-                    <div name="G" class="face flex">🤩
+                    <div id="G" class="face flex">
+                        🤩
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="8" class="box">
-                    <div name="B" class="face flex">🥳
+                    <div id="H" class="face flex">
+                        🥳
                     </div>
                     <div class="mark">
                     </div>
@@ -266,25 +221,29 @@
             </div>
             <div class="container flex">
                 <div id="9" class="box">
-                    <div name="C" class="face flex">😜
+                    <div id="I" class="face flex">
+                        😜
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="10" class="box">
-                    <div name="F" class="face flex">😂
+                    <div id="J" class="face flex">
+                        😂
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="11" class="box">
-                    <div name="H" class="face flex">🤣
+                    <div id="K" class="face flex">
+                        🤣
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="12" class="box">
-                    <div name="E" class="face flex">😴
+                    <div id="L" class="face flex">
+                        😴
                     </div>
                     <div class="mark">
                     </div>
@@ -292,25 +251,29 @@
             </div>
             <div class="container flex">
                 <div id="13" class="box">
-                    <div name="D" class="face flex">😎
+                    <div id="M" class="face flex">
+                        😎
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="14" class="box">
-                    <div name="F" class="face flex">😂
+                    <div id="N" class="face flex">
+                        😂
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="15" class="box">
-                    <div name="G" class="face flex">🤩
+                    <div id="O" class="face flex">
+                        🤩
                     </div>
                     <div class="mark">
                     </div>
                 </div>
                 <div id="16" class="box">
-                    <div name="H" class="face flex">🤣
+                    <div id="P" class="face flex">
+                        🤣
                     </div>
                     <div class="mark">
                     </div>
@@ -320,10 +283,11 @@
     </div>
     <div class="flex" id="result">
         <div id="message"></div>
-        <div id="button">Play again</div>
+        
     </div>
     <script src="./script.js"></script>
     
+
 </body>
 
 </html>

@@ -1,105 +1,163 @@
+document.addEventListener("DOMContentLoaded", function () {
+    let moves = 0;
+    let matchedPairs = 0;
+    let selectedCards = [];
+    let lockBoard = false;
 
-document.getElementById("1").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
+    const cards = document.querySelectorAll(".box");
+    const resultScreen = document.getElementById("result");
+    const message = document.getElementById("message");
+    const playAgainButton = document.getElementById("button");
 
-    questionMark[0].style.display = "none"
-}
+    const movesCount = document.querySelector("#moves-count span");
 
-document.getElementById("2").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[1].style.display = "none"
-}
-
-document.getElementById("3").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[2].style.display = "none"
-}
-document.getElementById("4").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[3].style.display = "none"
-}
-document.getElementById("5").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[4].style.display = "none"
-}
-
-document.getElementById("6").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[5].style.display = "none"
-}
-document.getElementById("7").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[6].style.display = "none"
-}
-document.getElementById("8").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[7].style.display = "none"
-}
-
-document.getElementById("9").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[8].style.display = "none"
-}
-document.getElementById("10").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[9].style.display = "none"
-}
-document.getElementById("11").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[10].style.display = "none"
-}
-
-document.getElementById("12").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[11].style.display = "none"
-}
-document.getElementById("13").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[12].style.display = "none"
-}
-document.getElementById("14").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[13].style.display = "none"
-}
-
-document.getElementById("15").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[14].style.display = "none"
-}
-document.getElementById("16").onclick = () => {
-    let questionMark = document.querySelectorAll(".mark")
-
-    questionMark[15].style.display = "none"
-}
-
-
-// let movesCount = 0;
-// let gameStatus =    true;
-// if (name[0] === name[3]) {
-//     movesCount += 1;
+        const timeElement = document.querySelector("#timer");
+    console.log(timeElement)
     
-// } else {
-//     movesCount = movesCount;
-//     questionMark[0].style.display = "block";
-// }
-// if (name[1] === name[7]) {
-//     movesCount += 1;
-//     questionMark[1].style.display = "none";
-// } else {
-//     movesCount == movesCount;
-//     questionMark[1].style.display = "block";
-// }
+    shuffleCards();
+
+    cards.forEach((card) => {
+        card.addEventListener("click", flipCard);
+    });
+
+    function shuffleCards() {
+        cards.forEach((card) => {
+            let randomPos = Math.floor(Math.random() * 16);
+            card.style.order = randomPos;
+        });
+    }
+
+
+    function flipCard() {
+        if (lockBoard) return;
+        if (this === selectedCards[0]) return;
+
+        displayCardContent(this);
+
+        selectedCards.push(this);
+
+        if (selectedCards.length === 2) {
+            checkForMatch();
+            updateMovesCount();
+        }
+    }
+
+
+    function displayCardContent(card) {
+        const face = card.querySelector(".face");
+        const mark = card.querySelector(".mark");
+
+        face.style.display = "flex";
+        mark.style.display = "none";
+    }
+
+
+    function checkForMatch() {
+        const [firstCard, secondCard] = selectedCards;
+
+        if (getCardContent(firstCard) === getCardContent(secondCard)) {
+            disableCards();
+            matchedPairs++;
+            console.log( matchedPairs);
+            if (matchedPairs === 8) {
+
+                displayResult("Congratulations! You won!");
+                localStorage.setItem("win",1)
+                window.location.href="./gameover.html";
+            }
+        } else {
+            lockBoard = true;
+            setTimeout(() => {
+                hideCardContent(firstCard);
+                hideCardContent(secondCard);
+                resetBoard();
+            }, 1000);
+        }
+    }
+
+    function getCardContent(card) {
+        return card.querySelector(".face").innerHTML;
+    }
+
+
+
+    function hideCardContent(card) {
+        const face = card.querySelector(".face");
+        const mark = card.querySelector(".mark");
+
+        face.style.display = "none";
+        mark.style.display = "flex";
+    }
+
+    function disableCards() {
+        selectedCards.forEach((card) => {
+            card.removeEventListener("click", flipCard);
+        });
+        resetBoard();
+    }
+
+
+    function resetBoard() {
+        [lockBoard, selectedCards] = [false, []];
+    }
+
+
+
+    function updateMovesCount() {
+        moves++;
+        movesCount.textContent = moves;
+        localStorage.setItem("moves",movesCount.textContent)
+        
+    }
+
+
+    
+    function displayResult(msg) {
+        message.textContent = msg;
+        resultScreen.style.visibility = "visible";
+    }
+
+
+    playAgainButton.addEventListener("click", function () {
+
+        moves = 0;
+        matchedPairs = 0;
+        selectedCards = [];
+        lockBoard = false;
+
+        cards.forEach((card) => {
+            card.addEventListener("click", flipCard);
+            hideCardContent(card);
+        });
+
+        movesCount.textContent = moves;
+        
+
+        //
+        resultScreen.style.visibility = "hidden";
+        resultScreen.style.opacity = "0";
+
+        shuffleCards();
+    });
+    
+
+});
+
+let timerspan = document.getElementById("timer");
+let time=60;
+function countDown() {
+
+    if(time==0){
+        localStorage.setItem("win",0)
+        window.location.href="./gameover.html"
+    }
+    timerspan.innerText=time;
+    time--;
+}
+setInterval(countDown, 1000);
+
+// Game over function
+    function gameOver(msg) {
+        
+        message.textContent = msg;
+    }
