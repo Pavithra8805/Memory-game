@@ -15,10 +15,12 @@ Cards can only be shown two at a time.
 
 ### Timing:
 
-The game may have a time limit 0f 60 seconds. The player have to try to match all pairs before time runs out.
+The game have a time limit 0f 60 seconds. The player have to try to match all pairs before time runs out.
 
 ## Tech Stack:
 HTML, CSS, JAVA SCRIPT.
  
-## Output
+## Output:
+![Screenshot (347)](https://github.com/Pavithra8805/Memory-game/assets/141915927/289488e2-5b9a-44fc-bea5-1f513d4231dc)
+
 
