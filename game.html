@@ -6,24 +6,31 @@
     <title>Memory Game</title>
     <link rel="stylesheet" href="./style.css" />
 </head>
-
+<style>
+    
+</style>
 <body class="Body">
     <div >
         <div class="controls-container">
             <p id="result"></p>
-
-            <div class="profile">
-                Name: <input type="text" id="Name"><br><br>
-                Nickname: <input type="text" id="Nickname"><br><br>
+            <form id="playerDetail">
+                <label id="name">PLAYER NAME:</label>
+                <input type="text" class="text" id="user1" required><br><br>
+                <label  id="name">NICK NAME:</label>
+                <input type="text" class="text" id="user2" required><br><br>
                 <div class="button">
                     <button id="instructions">Instructions</button>
                     <button id="start">Start Game</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- Script -->
     <script src="./game.js"></script>
+    <script src="./sound.js"></script>
 </body>
 
 </html>
+
+
+

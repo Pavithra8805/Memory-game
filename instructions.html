@@ -27,7 +27,7 @@
 
         }
 
-        .class{
+        .class {
             display: flex;
             margin-left: 25%;
             font-size: 25px;
@@ -48,6 +48,55 @@
             border-radius: 40px;
             cursor: pointer;
         }
+
+        @media (max-width: 600px) {
+            .head {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: wheat;
+                font-size: 5vw;
+                margin-top: 10vw;
+            }
+
+            .game-play {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4vw;
+                margin-left: 25%;
+                color: #FDC639;
+            }
+
+            .class {
+                display: flex;
+                justify-content: center;
+                font-size: 3vw;
+                color: ghostwhite;
+                margin-top: 2vw;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                background-color: #FDC639;
+                margin: 5vw auto;
+                padding: 2vw 4vw;
+                font-size: 3vw;
+                border-radius: 2vw;
+                cursor: pointer;
+            }
+
+            ol {
+                padding-left: 1.5vw;
+            }
+
+            li {
+                margin-bottom: 1vw;
+            }
+        }
     </style>
 </head>
 
@@ -59,14 +108,16 @@
         <h2>Game Play:</h2>
     </div>
     <div class="class">
-            <ol>
-                <li>Player take turn to flip over two cards, revealing their images.</li>
-                <li>If the two cards match,the player keeps the pair and gets another turn.</li>
-                <li>If the two cards do not match, the player flips them back face down.</li>
-                <li>The game continues until all pairs have been matched.</li>
-            </ol>
+        <ol>
+            <li>Player take turn to flip over two cards, revealing their images.</li>
+            <li>If the two cards match,the player keeps the pair and gets another turn.</li>
+            <li>If the two cards do not match, the player flips them back face down.</li>
+            <li>The game continues until all pairs have been matched.</li>
+        </ol>
     </div>
     <button id="continue">Continue</button>
     <script src="./instr.js"></script>
 </body>
+<script src="./sound.js"></script>
+
 </html>

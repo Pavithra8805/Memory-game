@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Over</title>
     <style>
-        body{
+        body {
             background: url("assests/Screenshot (337).png") no-repeat;
             background-size: cover;
         }
@@ -45,6 +45,27 @@
             left: 525px;
             bottom: 40px;
         }
+
+        @media only screen and (max-width: 480px) {
+    #wonOrLost {
+        padding-top: 5%;
+        font-size: 4vw;
+        -webkit-text-stroke: 1px white;
+    }
+
+    #score {
+        font-size: 3vw;
+        bottom: 10px;
+    }
+
+    #button {
+        font-size: 2vw;
+        width: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+    }
+}
     </style>
 </head>
 
@@ -52,6 +73,7 @@
     <h1 id="wonOrLost"></h1>
     <h1 id="score">moves: <span id="totalmoves"> </span></h1>
     <div id="button">Play again</div>
-<script src="./gameover.js"></script>
+    <script src="./gameover.js"></script>
 </body>
+
 </html>
